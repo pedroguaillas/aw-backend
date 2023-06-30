@@ -32,7 +32,7 @@ class SalaryAdvanceController extends Controller
     public function update(Request $request, int $id)
     {
         $salaryadvance = SalaryAdvance::find($id);
-        $salaryadvance->update($request->only(['amount', 'description']));
+        $salaryadvance->update($request->only(['amount', 'description', 'date']));
 
         return response()->json(['salaryadvance' => $salaryadvance]);
     }

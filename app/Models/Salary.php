@@ -9,6 +9,6 @@ class Salary extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'user_id', 'month', 'year', 'amount', 'cheque', 'amount_cheque', 'balance', 'cash'
+        'user_id', 'month', 'year', 'amount', 'cheque', 'amount_cheque', 'balance', 'cash', 'date'
     ];
 }

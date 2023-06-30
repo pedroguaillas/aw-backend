@@ -9,6 +9,6 @@ class SalaryAdvanceOfPay extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'salary_id', 'payment_id', 'amount'
+        'salary_id', 'payment_id', 'amount', 'date'
     ];
 }

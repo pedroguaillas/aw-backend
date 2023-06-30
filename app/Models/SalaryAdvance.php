@@ -9,6 +9,6 @@ class SalaryAdvance extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'salary_id', 'description', 'amount'
+        'salary_id', 'description', 'amount', 'date'
     ];
 }

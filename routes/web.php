@@ -2,6 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use Illuminate\Support\Facades\Hash;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -15,6 +17,10 @@
 
 $router->get('/', function () use ($router) {
     return $router->app->version();
+});
+
+$router->get('/pass', function () use ($router) {
+    return Hash::make('Arieklon669');
 });
 
 // API AUTH
@@ -95,6 +101,21 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->post('salaryadvanceofpays', 'SalaryAdvanceOfPayController@store');
         $router->put('salaryadvanceofpays/{id}', 'SalaryAdvanceOfPayController@update');
         $router->delete('salaryadvanceofpays/{id}', 'SalaryAdvanceOfPayController@destroy');
+
+        // Gastos
+        $router->get('expenses', 'ExpenseController@index');
+        $router->post('expenses', 'ExpenseController@store');
+        $router->put('expenses/{id}', 'ExpenseController@update');
+        $router->delete('expenses/{id}', 'ExpenseController@destroy');
+
+        // Gasto Items
+        $router->get('expense/{id}/items', 'ExpenseItemController@index');
+        $router->post('expenseitems', 'ExpenseItemController@store');
+        $router->put('expenseitems/{id}', 'ExpenseItemController@update');
+        $router->delete('expenseitems/{id}', 'ExpenseItemController@destroy');
+
+        //Dashboard
+        $router->post('summary', 'SummaryController@index');
     });
 });
 

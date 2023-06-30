@@ -20,7 +20,7 @@ class DashboardController extends Controller
 
         $payments = DB::table('payments')->select(DB::raw("SUM(amount) as amount, MONTH(date) AS month1, YEAR(date) AS year1"))
             ->whereNotNull('date')
-            ->whereYear('date', 2022)
+            ->whereYear('date', 2023)
             ->groupBy('month1', 'year1')->get();
 
         $payment_types = DB::table('payments')->select(DB::raw("SUM(amount) as amount, type"))

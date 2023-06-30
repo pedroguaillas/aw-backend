@@ -17,7 +17,7 @@ class SalaryAdvanceOfPayController extends Controller
     public function update(Request $request, int $id)
     {
         $salaryadvanceofpay = SalaryAdvanceOfPay::find($id);
-        $salaryadvanceofpay->update($request->only(['amount', 'description', 'payment_id']));
+        $salaryadvanceofpay->update($request->only(['amount', 'description', 'payment_id', 'date']));
 
         return response()->json(['salaryadvanceofpay' => $salaryadvanceofpay]);
     }
