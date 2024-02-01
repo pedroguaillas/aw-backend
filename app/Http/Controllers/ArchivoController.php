@@ -9,12 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class ArchivoController extends Controller
 {
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $info = $request->get('info');
@@ -33,12 +27,14 @@ class ArchivoController extends Controller
             case 2023:
                 $db = DBStatics::DB23;
                 break;
+            case 2024:
+                $db = DBStatics::DB24;
+                break;
             default:
                 $db = DBStatics::DB;
                 break;
         }
 
-        // DB::connection($anio < 2021 ? DBStatics::DB : DBStatics::DB21)
         DB::connection($db)
             ->table('archivos')
             ->updateOrInsert(
@@ -52,12 +48,6 @@ class ArchivoController extends Controller
         return response()->json(['OK', 201]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Archivo  $archivo
-     * @return \Illuminate\Http\Response
-     */
     public function show(Request $request)
     {
         $info = $request->get('info');
@@ -75,6 +65,9 @@ class ArchivoController extends Controller
                 break;
             case 2023:
                 $db = DBStatics::DB23;
+                break;
+            case 2024:
+                $db = DBStatics::DB24;
                 break;
             default:
                 $db = DBStatics::DB;
@@ -95,12 +88,6 @@ class ArchivoController extends Controller
         }
     }
 
-    /**
-     * Display the specified file.
-     *
-     * @param  \App\Archivo  $archivo
-     * @return \Illuminate\Http\Response
-     */
     public function showtype(Request $request)
     {
         $info = $request->get('info');

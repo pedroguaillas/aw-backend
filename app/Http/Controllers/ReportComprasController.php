@@ -28,6 +28,9 @@ class ReportComprasController extends Controller
             case 2023:
                 $db = DBStatics::DB23;
                 break;
+            case 2024:
+                $db = DBStatics::DB24;
+                break;
             default:
                 $db = DBStatics::DB;
                 break;

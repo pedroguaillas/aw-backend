@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class AtsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
         $info = $request->get('info');
@@ -50,6 +45,9 @@ class AtsController extends Controller
                     break;
                 case 2023:
                     $db = DBStatics::DB23;
+                    break;
+                case 2024:
+                    $db = DBStatics::DB24;
                     break;
                 default:
                     $db = DBStatics::DB;

@@ -8,4 +8,5 @@ class DBStatics
     const DB21       = 'mysql2';
     const DB22       = 'mysql3';
     const DB23       = 'mysql4';
+    const DB24       = 'mysql5';
 }
